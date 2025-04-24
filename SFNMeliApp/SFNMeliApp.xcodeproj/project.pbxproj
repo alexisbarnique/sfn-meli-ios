@@ -18,6 +18,12 @@
 		CFA8F32E2DB9BE7E00719453 /* SFNArticlesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F32D2DB9BE7E00719453 /* SFNArticlesServices.swift */; };
 		CFA8F3302DB9C2E800719453 /* ArticleModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F32F2DB9C2E800719453 /* ArticleModelResponse.swift */; };
 		CFA8F3382DB9CCB500719453 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CFA8F3372DB9CCB500719453 /* Alamofire */; };
+		CFA8F33A2DBA513800719453 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F3392DBA513800719453 /* Endpoint.swift */; };
+		CFA8F33C2DBA51D200719453 /* ServiceRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F33B2DBA51D200719453 /* ServiceRequestModel.swift */; };
+		CFA8F33E2DBA537700719453 /* SFNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F33D2DBA537700719453 /* SFNError.swift */; };
+		CFA8F3402DBA54AA00719453 /* ServiceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F33F2DBA54AA00719453 /* ServiceNetworkManager.swift */; };
+		CFA8F3422DBA5E0400719453 /* ConstantsAPIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F3412DBA5E0400719453 /* ConstantsAPIParameters.swift */; };
+		CFA8F3442DBA5E5E00719453 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F3432DBA5E5E00719453 /* DictionaryHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		CFA8F3272DB9BC9E00719453 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		CFA8F32D2DB9BE7E00719453 /* SFNArticlesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFNArticlesServices.swift; sourceTree = "<group>"; };
 		CFA8F32F2DB9C2E800719453 /* ArticleModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModelResponse.swift; sourceTree = "<group>"; };
+		CFA8F3392DBA513800719453 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CFA8F33B2DBA51D200719453 /* ServiceRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequestModel.swift; sourceTree = "<group>"; };
+		CFA8F33D2DBA537700719453 /* SFNError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFNError.swift; sourceTree = "<group>"; };
+		CFA8F33F2DBA54AA00719453 /* ServiceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkManager.swift; sourceTree = "<group>"; };
+		CFA8F3412DBA5E0400719453 /* ConstantsAPIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPIParameters.swift; sourceTree = "<group>"; };
+		CFA8F3432DBA5E5E00719453 /* DictionaryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +153,12 @@
 		CFA8F3252DB9BC6D00719453 /* BaseService */ = {
 			isa = PBXGroup;
 			children = (
+				CFA8F3392DBA513800719453 /* Endpoint.swift */,
 				CFA8F3272DB9BC9E00719453 /* BaseService.swift */,
+				CFA8F33B2DBA51D200719453 /* ServiceRequestModel.swift */,
+				CFA8F33D2DBA537700719453 /* SFNError.swift */,
+				CFA8F33F2DBA54AA00719453 /* ServiceNetworkManager.swift */,
+				CFA8F3412DBA5E0400719453 /* ConstantsAPIParameters.swift */,
 			);
 			path = BaseService;
 			sourceTree = "<group>";
@@ -149,6 +166,7 @@
 		CFA8F3262DB9BC7F00719453 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CFA8F3432DBA5E5E00719453 /* DictionaryHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,11 +340,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA8F3402DBA54AA00719453 /* ServiceNetworkManager.swift in Sources */,
+				CFA8F33C2DBA51D200719453 /* ServiceRequestModel.swift in Sources */,
 				CFA8F2FE2DB9BB3800719453 /* ContentView.swift in Sources */,
+				CFA8F33E2DBA537700719453 /* SFNError.swift in Sources */,
 				CFA8F3302DB9C2E800719453 /* ArticleModelResponse.swift in Sources */,
 				CFA8F2FC2DB9BB3800719453 /* SFNMeliAppApp.swift in Sources */,
+				CFA8F3422DBA5E0400719453 /* ConstantsAPIParameters.swift in Sources */,
 				CFA8F32E2DB9BE7E00719453 /* SFNArticlesServices.swift in Sources */,
+				CFA8F33A2DBA513800719453 /* Endpoint.swift in Sources */,
 				CFA8F3282DB9BC9E00719453 /* BaseService.swift in Sources */,
+				CFA8F3442DBA5E5E00719453 /* DictionaryHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

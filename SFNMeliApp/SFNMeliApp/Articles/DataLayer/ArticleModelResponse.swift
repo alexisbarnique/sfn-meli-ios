@@ -11,11 +11,11 @@ import Foundation
 struct Article: Codable {
     let count: Int
     let next, previous: String
-    let results: [Result]
+    let results: [ResultArticle]
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct ResultArticle: Codable {
     let id: Int
     let title: String
     let authors: [Author]
