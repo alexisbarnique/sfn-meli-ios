@@ -11,7 +11,9 @@ import SwiftUI
 struct SFNMeliAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticleList()
+//            ArticlesListView()
+//            ContentView()
         }
     }
 }

@@ -108,6 +108,7 @@ final class ServiceNetworkManager: SessionDelegate {
                         failure?(SFNError(message: ""))
                         return
                     }
+                    print(jsonError)
                     failure?(SFNError(message: "Failure service"))
             }
         }

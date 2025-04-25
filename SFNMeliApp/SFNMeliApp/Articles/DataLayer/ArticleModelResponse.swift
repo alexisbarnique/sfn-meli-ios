@@ -8,14 +8,14 @@
 import Foundation
 
 // MARK: - Article
-struct Article: Codable {
+struct Articles: Codable {
     let count: Int
-    let next, previous: String
-    let results: [ResultArticle]
+    let next, previous: String?
+    let results: [Article]
 }
 
 // MARK: - Result
-struct ResultArticle: Codable {
+struct Article: Identifiable, Codable {
     let id: Int
     let title: String
     let authors: [Author]
@@ -39,7 +39,7 @@ struct ResultArticle: Codable {
 // MARK: - Author
 struct Author: Codable {
     let name: String
-    let socials: Socials
+    let socials: Socials?
 }
 
 // MARK: - Socials
