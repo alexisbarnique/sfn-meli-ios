@@ -4,6 +4,7 @@
 //
 //  Created by Alexis Barnique on 24/04/2025.
 //
+// Strings constants.
 
 import Foundation
 

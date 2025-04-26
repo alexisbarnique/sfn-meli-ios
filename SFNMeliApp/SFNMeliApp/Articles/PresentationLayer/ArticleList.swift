@@ -4,6 +4,7 @@
 //
 //  Created by Alexis Barnique on 25/04/2025.
 //
+//  A view showing a list of articles.
 
 import SwiftUI
 

@@ -4,9 +4,11 @@
 //
 //  Created by Alexis Barnique on 24/04/2025.
 //
+//  ViewModel to serve data to the Views.
 
 import SwiftUI
 import Alamofire
+
 
 class ArticlesViewModel: ObservableObject {
     @Published var articles: [Article] = [] // List of articles
@@ -14,6 +16,8 @@ class ArticlesViewModel: ObservableObject {
     @Published var errorMessage: String? // Stores error messages if any
     @Published var article: Article?
     
+    
+    /// This function obtain the last articles
     func loadArticles() {
         isLoading = true
         errorMessage = nil
@@ -31,6 +35,7 @@ class ArticlesViewModel: ObservableObject {
         }
     }
     
+    /// This function obtains the details of an article from its id
     func loadArticle(id: String) {
         isLoading = true
         errorMessage = nil

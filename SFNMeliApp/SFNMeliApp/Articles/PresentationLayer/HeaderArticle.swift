@@ -4,6 +4,7 @@
 //
 //  Created by Alexis Barnique on 26/04/2025.
 //
+//  A view that positions text on top of an image.
 
 import SwiftUI
 

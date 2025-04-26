@@ -4,6 +4,7 @@
 //
 //  Created by Alexis Barnique on 25/04/2025.
 //
+//  A single row to be displayed in a list of articles.
 
 import SwiftUI
 

@@ -4,6 +4,7 @@
 //
 //  Created by Alexis Barnique on 23/04/2025.
 //
+//  Class to call the API.
 
 import Foundation
 import Alamofire
@@ -13,11 +14,11 @@ class SFNArticlesServices {
     
     private init() {}
     
+    /// Function to load the last articles from Spaceflight News API
+    /// - Parameter completion: Response from the API
     func fetchArticles(completion: @escaping (Result<Articles, AFError>) -> Void) {
-        let url = "https://api.spaceflightnewsapi.net/v4/articles/"
-        
-        AF.request(url, method: .get)
-            .validate() // Ensures the response has a valid status code
+        AF.request(Endpoint.articles.rawValue, method: .get)
+            .validate()
             .responseDecodable(of: Articles.self) { response in
                 switch response.result {
                 case .success(let articles):
@@ -28,11 +29,16 @@ class SFNArticlesServices {
             }
     }
     
+    
+    /// Function to obtain the details of an article from Spaceflight News API
+    /// - Parameters:
+    ///   - id: id of article
+    ///   - completion: Response from the API
     func fetchArticle(id: String, completion: @escaping (Result<Article, AFError>) -> Void) {
-        let url = "https://api.spaceflightnewsapi.net/v4/articles/\(id)/"
+        let url = Endpoint.articles.rawValue + "\(id)"
         
         AF.request(url, method: .get)
-            .validate() // Ensures the response has a valid status code
+            .validate()
             .responseDecodable(of: Article.self) { response in
                 switch response.result {
                 case .success(let article):

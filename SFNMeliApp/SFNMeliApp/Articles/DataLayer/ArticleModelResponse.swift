@@ -4,6 +4,7 @@
 //
 //  Created by Alexis Barnique on 23/04/2025.
 //
+//  Response model from de API.
 
 import Foundation
 
