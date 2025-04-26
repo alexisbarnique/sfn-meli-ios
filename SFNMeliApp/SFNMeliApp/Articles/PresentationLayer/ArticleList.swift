@@ -8,35 +8,37 @@
 import SwiftUI
 
 struct ArticleList: View {
-//    @Environment(ModelData.self) var modelData
-//    @State private var showFavoritesOnly = false
-
-//    var filteredLandmarks: [Landmark] {
-//        modelData.landmarks.filter { landmark in
-//            (!showFavoritesOnly || landmark.isFavorite)
-//        }
-//    }
     @StateObject private var viewModel = ArticlesViewModel()
+    @State private var searchText = ""
+    
+    var filteredNews: [Article] {
+        if searchText.isEmpty {
+            return viewModel.articles
+        } else {
+            return viewModel.articles.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
+    
     var body: some View {
         NavigationSplitView {
             List {
-                //Search here
-
-                ForEach(viewModel.articles) { article in
+                ForEach(filteredNews) { article in
                     NavigationLink {
-                        ArticleDetail(article: article)
+                        ArticleDetail(id: String(article.id))
                     } label: {
                         ArticleRow(article: article)
                     }
                 }
             }
-            .onAppear {
-                viewModel.loadArticles()
-            }
-//            .animation(.default, value: filteredLandmarks)
-//            .navigationTitle("Launchs")
+            .listStyle(.inset)
+            .navigationTitle("News")
+            
         } detail: {
-            Text("Select an item")
+            Text("Click for more info")
+        }
+        .searchable(text: $searchText)
+        .onAppear {
+            viewModel.loadArticles()
         }
     }
 }

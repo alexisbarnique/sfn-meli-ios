@@ -12,8 +12,6 @@ struct SFNMeliAppApp: App {
     var body: some Scene {
         WindowGroup {
             ArticleList()
-//            ArticlesListView()
-//            ContentView()
         }
     }
 }

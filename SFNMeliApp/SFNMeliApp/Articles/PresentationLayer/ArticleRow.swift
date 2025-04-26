@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct ArticleRow: View {
     var article: Article
 
     var body: some View {
         HStack {
-            KFImage.url(URL(string:article.imageURL))
-                .resizable()
-                .frame(width: 50, height: 50)
+            AsyncImage(url: URL(string: article.imageURL)) { image in
+                image.resizable()
+            } placeholder: {
+                Color.gray
+            }
+            .frame(width: 50, height: 50)
+            .clipShape(.rect(cornerRadius: 10))
             Text(article.title)
             
             Spacer()

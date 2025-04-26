@@ -6,56 +6,51 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct ArticleDetail: View {
-//    @Environment(ModelData.self) var modelData
-    var article: Article
-
-//    var landmarkIndex: Int {
-//        modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
-//    }
-
+    @StateObject private var viewModel = ArticlesViewModel()
+    var id: String
+    
     var body: some View {
-//        @Bindable var modelData = modelData
-        let imageUrl = URL(string: article.imageURL)
+        let article = viewModel.article
         ScrollView {
-//            MapView(coordinate: landmark.locationCoordinate)
-//                .frame(height: 300)
+            if let article = viewModel.article {
+                HeaderImageArticle(article: article)
+                    .frame(height: 200)
             
-            KFImage(imageUrl)
-                .resizable()
-                .clipShape(Circle())
-                .overlay {
-                    Circle().stroke(.white, lineWidth: 4)
-                }
-                .shadow(radius: 7)
-                .offset(y: -130)
-                .padding(.bottom, -130)
 
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(article.title)
-                        .font(.title)
-                }
-
-                HStack {
-                    Text(article.newsSite)
-                    Spacer()
+                VStack(alignment: .leading) {
+                    Text(article.publishedAt)
+                        .font(.caption)
+                        .padding(.bottom, 20)
+                    
                     Text(article.summary)
+                        .font(.body)
+                        .padding(.bottom, 20)
+                    
+                    Divider()
+                    Spacer()
+                    
+                    if let link = URL(string: article.url) {
+                        HStack(alignment: .center) {
+                            Spacer()
+                            Link("Open Website", destination: link)
+                                .font(.subheadline)
+                                .foregroundColor(.blue)
+                                .padding()
+                            Spacer()
+                        }
+                    }
+                    
                 }
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-
-                Divider()
-
-                Text("About \(article.featured)")
-                    .font(.title2)
-                Text(article.publishedAt)
+                .padding()
+            
             }
-            .padding()
         }
-        .navigationTitle(article.url)
+        .navigationTitle(article?.newsSite ?? "")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            viewModel.loadArticle(id: id)
+        }
     }
 }

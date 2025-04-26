@@ -20,7 +20,6 @@ enum TimeoutRequest: TimeInterval {
 final class ServiceNetworkManager: SessionDelegate {
     static let sharedInstance = ServiceNetworkManager()
     let configuration = URLSessionConfiguration.default
-    //    var logger : [EventMonitor] = []
     var sessionManager = Session()
     
     private init() {

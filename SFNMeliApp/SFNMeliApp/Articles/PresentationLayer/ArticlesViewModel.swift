@@ -12,11 +12,12 @@ class ArticlesViewModel: ObservableObject {
     @Published var articles: [Article] = [] // List of articles
     @Published var isLoading: Bool = false // Tracks loading status
     @Published var errorMessage: String? // Stores error messages if any
-
+    @Published var article: Article?
+    
     func loadArticles() {
         isLoading = true
         errorMessage = nil
-
+        
         SFNArticlesServices.shared.fetchArticles { [weak self] result in
             DispatchQueue.main.async {
                 self?.isLoading = false
@@ -30,20 +31,21 @@ class ArticlesViewModel: ObservableObject {
         }
     }
     
-//    func testArticles() {
-//        let url = "https://api.spaceflightnewsapi.net/v4/articles/"
-//        isLoading = true
-//        errorMessage = nil
-//        AF.request(url, method: .get).responseDecodable(of: Articles.self) { response in
-//            self.isLoading = false
-//            debugPrint(response)
-//            switch response.result {
-//            case .success(let articles):
-//                self.articles = articles.results
-//            case .failure(let error):
-//                print(" error", error)
-//                self.errorMessage = error.localizedDescription
-//            }
-//        }
-//    }
+    func loadArticle(id: String) {
+        isLoading = true
+        errorMessage = nil
+        
+        SFNArticlesServices.shared.fetchArticle(id: id) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+                switch result {
+                case .success(let article):
+                    self?.article = article
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+    
 }
