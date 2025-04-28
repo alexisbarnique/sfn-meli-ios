@@ -4,7 +4,7 @@
 # SFNMeLiApp
 <br />
 <p align="center">
-    **SFNMeLiApp** It is an app for the MercadoLibre iOS developer challenge
+    SFNMeLiApp It is an app for the MercadoLibre iOS developer challenge
 </p>
 
 ## Description
