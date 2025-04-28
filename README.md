@@ -25,8 +25,8 @@ of space flights
 1. Clone the repository:
    git clone https://github.com/alexisbarnique/sfn-meli-ios/tree/main/SFNMeliApp.git
    
-2. cd MyAwesomeApp
-    open MyAwesomeApp.xcodeproj
+2. cd SFNMeliApp
+    open SFNMeliApp.xcodeproj
 
 3. swift package resolve
 
