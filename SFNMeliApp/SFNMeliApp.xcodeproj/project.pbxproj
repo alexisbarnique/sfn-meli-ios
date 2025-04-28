@@ -21,7 +21,6 @@
 		CFA8F33C2DBA51D200719453 /* ServiceRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F33B2DBA51D200719453 /* ServiceRequestModel.swift */; };
 		CFA8F33E2DBA537700719453 /* SFNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F33D2DBA537700719453 /* SFNError.swift */; };
 		CFA8F3402DBA54AA00719453 /* ServiceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F33F2DBA54AA00719453 /* ServiceNetworkManager.swift */; };
-		CFA8F3422DBA5E0400719453 /* ConstantsAPIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F3412DBA5E0400719453 /* ConstantsAPIParameters.swift */; };
 		CFA8F3442DBA5E5E00719453 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F3432DBA5E5E00719453 /* DictionaryHelper.swift */; };
 		CFA8F3462DBB1F8700719453 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F3452DBB1F8700719453 /* ArticlesViewModel.swift */; };
 		CFA8F34C2DBB4D1400719453 /* ArticleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F34B2DBB4D1400719453 /* ArticleRow.swift */; };
@@ -69,7 +68,6 @@
 		CFA8F33B2DBA51D200719453 /* ServiceRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequestModel.swift; sourceTree = "<group>"; };
 		CFA8F33D2DBA537700719453 /* SFNError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFNError.swift; sourceTree = "<group>"; };
 		CFA8F33F2DBA54AA00719453 /* ServiceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkManager.swift; sourceTree = "<group>"; };
-		CFA8F3412DBA5E0400719453 /* ConstantsAPIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPIParameters.swift; sourceTree = "<group>"; };
 		CFA8F3432DBA5E5E00719453 /* DictionaryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
 		CFA8F3452DBB1F8700719453 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		CFA8F34B2DBB4D1400719453 /* ArticleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRow.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				CFA8F33B2DBA51D200719453 /* ServiceRequestModel.swift */,
 				CFA8F33D2DBA537700719453 /* SFNError.swift */,
 				CFA8F33F2DBA54AA00719453 /* ServiceNetworkManager.swift */,
-				CFA8F3412DBA5E0400719453 /* ConstantsAPIParameters.swift */,
 			);
 			path = BaseService;
 			sourceTree = "<group>";
@@ -388,7 +385,6 @@
 				CFA8F3462DBB1F8700719453 /* ArticlesViewModel.swift in Sources */,
 				CFA8F3572DBD194F00719453 /* HeaderArticle.swift in Sources */,
 				CFA8F2FC2DB9BB3800719453 /* SFNMeliAppApp.swift in Sources */,
-				CFA8F3422DBA5E0400719453 /* ConstantsAPIParameters.swift in Sources */,
 				CFA8F32E2DB9BE7E00719453 /* SFNArticlesServices.swift in Sources */,
 				CFA8F3512DBB4E6400719453 /* ArticleList.swift in Sources */,
 				CFA8F33A2DBA513800719453 /* Endpoint.swift in Sources */,
@@ -561,7 +557,7 @@
 				DEVELOPMENT_TEAM = UNHM7RB3GJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = SFNMeli;
+				INFOPLIST_KEY_CFBundleDisplayName = SFNMeLi;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,7 +589,7 @@
 				DEVELOPMENT_TEAM = UNHM7RB3GJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = SFNMeli;
+				INFOPLIST_KEY_CFBundleDisplayName = SFNMeLi;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

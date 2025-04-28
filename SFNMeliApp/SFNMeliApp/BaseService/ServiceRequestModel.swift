@@ -12,7 +12,6 @@ protocol ServiceRequestModelProtocol {
     var url: String { get }
     var method: HTTPMethod { get }
     var parameters: [String: Any] { get }
-//    var headers: HTTPHeaders { get }
     var timeout: TimeoutRequest { get }
 }
 
@@ -21,7 +20,6 @@ struct GenericServiceRequestModel {
     let method: HTTPMethod
     let queryParams: [String: String]
     let paramObject: Encodable?
-//    var customHeaders: HTTPHeaders
     let endPath: String
     var timeout: TimeoutRequest
     
@@ -36,7 +34,6 @@ struct GenericServiceRequestModel {
         self.method = method
         self.queryParams = queryParams
         self.paramObject = paramObject
-//        self.customHeaders = customHeaders
         self.endPath = endPath
         self.timeout = timeout
     }

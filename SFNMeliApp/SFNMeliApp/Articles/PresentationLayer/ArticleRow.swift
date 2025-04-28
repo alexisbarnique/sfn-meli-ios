@@ -21,7 +21,7 @@ struct ArticleRow: View {
             .frame(width: 50, height: 50)
             .clipShape(.rect(cornerRadius: 10))
             Text(article.title)
-                .accessibilityIdentifier("listItem_\(article.title)")
+                .accessibilityIdentifier("listItem_\(article.id)")
             Spacer()
         }
     }

@@ -14,7 +14,7 @@ struct SFNMeliAppApp: App {
             if CommandLine.arguments.contains("UITestMode") {
                 let articleList = MockManager.shared.getArticleListMock()
                 let article = MockManager.shared.getArticleMock()
-                ArticleList(viewModel: ArticlesViewModel(mockListArticle: articleList?.results, mockArticle: article))
+                ArticleList(viewModel: ArticlesViewModel(mockListArticle: articleList?.results))
             } else {
                 ArticleList(viewModel: ArticlesViewModel())
             }

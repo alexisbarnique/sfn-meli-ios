@@ -21,6 +21,10 @@ class ArticlesViewModel: ObservableObject {
     @Published var state: NewsState = .loading
     
     
+    /// This initialization allows to pass data from mock
+    /// - Parameters:
+    ///   - mockListArticle: News list mock
+    ///   - mockArticle: Article mock
     init(mockListArticle: [Article]? = nil, mockArticle: Article? = nil) {
         if let mockList = mockListArticle, let article = mockArticle {
             self.articles = mockList

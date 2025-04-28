@@ -59,14 +59,6 @@ final class ServiceNetworkManager: SessionDelegate {
                     return
                 }
                 success?(dictionaryData)
-                //                    if emptyBodyResponse {
-                //                        success?(dictionaryData.dictionaryForKey("d"))
-                //                    } else if !dictionaryData.dictionaryForKey("d").isEmpty {
-                //                        success?(dictionaryData.dictionaryForKey("d"))
-                //                    } else {
-                //                        failure?(SFNError(message: ""))
-                //                    }
-                
             case.failure(_):
                 let statusCode = response.response?.statusCode ?? 0
                 if emptyBodyResponse && statusCode >= 200 && statusCode < 300 {

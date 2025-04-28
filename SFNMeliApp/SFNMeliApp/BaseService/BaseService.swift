@@ -51,7 +51,7 @@ extension BaseService: BaseServiceProtocol {
                 let value = try decoder.decode(T.self, from: data)
                 completion(.success(value))
             } catch {
-                completion(.failure(.init(message: "Error dictionary Service")))
+                completion(.failure(.init(message: "Error dictionary")))
             }
         }, failure: { error in
             completion(.failure(error))

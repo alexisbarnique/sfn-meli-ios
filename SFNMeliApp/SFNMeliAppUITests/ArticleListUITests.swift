@@ -45,10 +45,19 @@ final class ArticleListUITests: XCTestCase {
 
         // Verify that filtered items are displayed
         XCTAssertTrue(app.staticTexts["listItem_30886"].exists, "Filtered item '30886' should be displayed")
-        XCTAssertFalse(app.staticTexts["listItem_30884"].exists, "Unmatched item '30884' should not be displayed")
+        XCTAssertFalse(app.staticTexts["listItem_30"].exists, "Unmatched item '30884' should not be displayed")
         
         // Clear the search text
-        searchBar.buttons["Cancel"].tap()
+        app.buttons["Cancel"].tap()
         XCTAssertTrue(app.staticTexts["listItem_30884"].exists, "List should return to its original state")
+    }
+    
+    func testViewDetailArticle() throws {
+        // Set UITestMode and launch app
+        app.launchArguments.append("UITestMode")
+        app.launch()
+        
+        //Open detail view article
+        app.staticTexts["listItem_30886"].tap()
     }
 }

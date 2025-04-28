@@ -28,7 +28,7 @@ struct ArticleList: View {
                     List {
                         ForEach(filteredNews) { article in
                             NavigationLink {
-                                ArticleDetail(id: String(article.id))
+                                ArticleDetail(viewModel: ArticlesViewModel(), id: String(article.id))
                             } label: {
                                 ArticleRow(article: article)
                             }
