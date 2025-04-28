@@ -11,7 +11,13 @@ import SwiftUI
 struct SFNMeliAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ArticleList()
+            if CommandLine.arguments.contains("UITestMode") {
+                let articleList = MockManager.shared.getArticleListMock()
+                let article = MockManager.shared.getArticleMock()
+                ArticleList(viewModel: ArticlesViewModel(mockListArticle: articleList?.results, mockArticle: article))
+            } else {
+                ArticleList(viewModel: ArticlesViewModel())
+            }
         }
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ArticleList: View {
-    @StateObject private var viewModel = ArticlesViewModel()
+    @StateObject var viewModel: ArticlesViewModel
     @State private var searchText = ""
     
     var filteredNews: [Article] {
@@ -21,24 +21,47 @@ struct ArticleList: View {
     }
     
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(filteredNews) { article in
-                    NavigationLink {
-                        ArticleDetail(id: String(article.id))
-                    } label: {
-                        ArticleRow(article: article)
+        ZStack {
+            switch viewModel.state {
+            case .success:
+                NavigationSplitView {
+                    List {
+                        ForEach(filteredNews) { article in
+                            NavigationLink {
+                                ArticleDetail(id: String(article.id))
+                            } label: {
+                                ArticleRow(article: article)
+                            }
+                        }
+                    }
+                    .listStyle(.inset)
+                    .navigationTitle("News")
+                    .searchable(text: $searchText)
+                    .accessibilityIdentifier("searchBar")
+                    
+                } detail: {
+                    Text("Click for more info")
+                }
+            case .loading:
+                ProgressView()
+                .accessibilityIdentifier("Loading view")
+            case .error:
+                VStack {
+                    Text("Cant show the news in this moment, Please retry!")
+                    Button(action: {
+                        viewModel.loadArticles()
+                    }) {
+                        Text("Retry")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
                     }
                 }
+                .padding()
+                .navigationTitle("Error")
             }
-            .listStyle(.inset)
-            .navigationTitle("News")
-            
-        } detail: {
-            Text("Click for more info")
-        }
-        .searchable(text: $searchText)
-        .onAppear {
+        }.onAppear {
             viewModel.loadArticles()
         }
     }
